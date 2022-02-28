@@ -32,7 +32,7 @@ test {
     useJUnitPlatform()
 }
 
-String imageName = "sanjeevkoul/parkridemanagment${project.name}:${project.version}"
+String imageName = "sanjeevkoul/${project.name}:${project.version}"
 
 docker {
     name imageName
@@ -40,7 +40,6 @@ docker {
     buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
 }
 
-project.version = scmVersion.version
 
 dockerRun {
     name project.name
