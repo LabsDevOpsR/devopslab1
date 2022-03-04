@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:17-alpine
 ARG JAR_FILE
 RUN mkdir /app
 COPY ${JAR_FILE} /app/app.jar

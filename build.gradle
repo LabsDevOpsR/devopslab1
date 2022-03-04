@@ -40,7 +40,6 @@ docker {
     buildArgs([JAR_FILE: bootJar.archiveFileName.get()])
 }
 
-
 dockerRun {
     name project.name
     image imageName
