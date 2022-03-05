@@ -47,9 +47,3 @@ dockerRun {
     clean true
 }
 
-task projectver {
-    doLast {
-        println imageName
-        println project.name
-    }
-}
