@@ -31,8 +31,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-String imageName = "sanjeevkoul/${project.name}:${project.version}"
+String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'sanjeevkoul'
+String imageName = "${dockerHubUsernameProperty}/${project.name}:${project.version}"
 
 docker {
     name imageName
@@ -47,3 +47,9 @@ dockerRun {
     clean true
 }
 
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
